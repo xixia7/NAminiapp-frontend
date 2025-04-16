@@ -1,0 +1,72 @@
+<!--pages/monitoring/monitoring.wxml-->
+<view class="view-container">
+  <view class="top">
+    <van-sticky>
+        <van-notice-bar
+      left-icon="volume-o"
+      speed="80"
+      text="nGy/h(纳戈瑞每小时)，是剂量率单位,表示每小时吸收的剂量。数据来源于生态环境部辐射环境监测技术中心，每天早上10:00更新数据。500以下为正常值。"
+    />
+    </van-sticky>
+  </view>
+  <view class="content">
+    <van-tabs active="{{ active }}" bind:change="changeTab">
+      <scroll-view scroll-y="true" style="height:{{scrollHeight}};">
+        <van-tab title="省会城市" >
+            <view wx:if="{{cityNaList.length > 0}}" class="row-container" wx:for="{{cityNaList}}" wx:key="index" >
+              <view class="row-content-container">
+                <van-row>
+                  <van-col span="24"><text>{{item.name}} ({{item.site}})</text></van-col>
+                </van-row>
+                <van-row gutter="20">
+                  <van-col span="8">
+                    <van-tag type="warning" size="medium">
+                      <text class="nr-value">{{item.value}} nGy/h</text>
+                    </van-tag>
+                  </van-col>
+                  <van-col span="8" offset="8"><text>{{item.date}}</text></van-col>
+                </van-row>
+                <!-- 定位 -->
+                  <view class="row-content-bg" 
+                  style="width: {{ showCityBg ? (item.value/(cityMaxValue))*100+'%' : '0'}}"
+                  >
+                  </view>
+              </view>
+          </view>
+          <view wx:if="{{cityNaList.length <= 0}}" >
+            <van-empty  description="正在更新中..." />
+          </view>
+        </van-tab>
+        <van-tab title="核电厂外围">
+          <view  wx:if="{{factoryNaList.length > 0}}" class="row-container" wx:for="{{factoryNaList}}" wx:key="index" >
+            <view class="row-content-container">
+              <van-row>
+                <van-col span="24"><text>{{item.name}} ({{item.site}})</text></van-col>
+              </van-row>
+              <van-row gutter="20">
+                <van-col span="8">
+                  <van-tag type="warning" size="medium">
+                    <text class="nr-value">{{item.value}} nGy/h</text>
+                  </van-tag>
+                </van-col>
+                <van-col span="8" offset="8"><text>{{item.date}}</text></van-col>
+              </van-row>
+
+                <view class="row-content-bg" 
+                style="width: {{ showFactoryBg ? (item.value/factoryMaxValue)*100+'%' : '0'}}"
+                >
+                </view>
+            </view>
+          </view>
+          <view wx:if="{{factoryNaList.length <= 0}}" >
+            <van-empty  description="正在更新中..." />
+          </view>
+        </van-tab>
+    </scroll-view>
+  </van-tabs>
+
+
+  </view>
+</view>
+
+

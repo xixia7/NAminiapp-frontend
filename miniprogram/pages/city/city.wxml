@@ -1,0 +1,73 @@
+<!--pages/city/city.wxml-->
+<view class="view-container">
+
+<view class="top">
+  <van-notice-bar
+  left-icon="volume-o"
+  text="数据来源于生态环境部辐射环境监测技术中心，每天早上10:00更新数据。"
+/>
+
+  <!-- <van-divider
+    contentPosition="center"
+    customStyle="color: #1989fa; border-color: #1989fa; font-size: 32rpx;"
+  >
+  <text>省会城市空气吸收剂量率监测值({{'<'}}300为正常)</text>
+  </van-divider> -->
+</view>
+<view class="content">
+  <van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="省会城市空气吸收剂量率监测值">
+    <view class="row-container" wx:for="{{list}}" wx:key="index" >
+    <view class="row-content-container">
+      <van-row>
+        <van-col span="24"><text>{{item.name}} ({{item.site}})</text></van-col>
+      </van-row>
+      <van-row gutter="20">
+        <van-col span="8">
+          <van-tag type="warning" size="medium">
+            <text class="nr-value">{{item.value}} nGy/h</text>
+          </van-tag>
+        </van-col>
+        <van-col span="8" offset="8"><text>2023-09-03</text></van-col>
+      </van-row>
+      <!-- 定位 -->
+        <view class="row-content-bg" 
+        style="width: {{ show ? (item.value/maxValue)*100+'%' : '0'}}"
+        >
+        </view>
+    </view>
+    <!-- <van-divider /> -->
+  </view>
+  </van-tab>
+  <van-tab title="省会城市空气吸收剂量率监测值">
+    <view class="row-container" wx:for="{{list}}" wx:key="index" >
+    <view class="row-content-container">
+      <van-row>
+        <van-col span="24"><text>{{item.name}} ({{item.site}})</text></van-col>
+      </van-row>
+      <van-row gutter="20">
+        <van-col span="8">
+          <van-tag type="warning" size="medium">
+            <text class="nr-value">{{item.value}} nGy/h</text>
+          </van-tag>
+        </van-col>
+        <van-col span="8" offset="8"><text>2023-09-03</text></van-col>
+      </van-row>
+      <!-- 定位 -->
+        <view class="row-content-bg" 
+        style="width: {{ show ? (item.value/maxValue)*100+'%' : '0'}}"
+        >
+        </view>
+    </view>
+    <!-- <van-divider /> -->
+  </view>
+  </van-tab>
+</van-tabs>
+
+
+</view>
+
+
+</view>
+
+

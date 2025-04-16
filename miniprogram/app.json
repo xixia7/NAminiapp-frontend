@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/monitoring/monitoring",
+    "pages/mine/mine"
+  ],
+  "subpackages": [
+    {
+      "root": "monitoring",
+      "pages": [
+        "pages/monitoring"
+      ]
+    }, {
+      "root": "mine",
+      "name": "mine",
+      "pages": [
+        "pages/mine"
+      ]
+    },{
+      "root": "logs",
+      "name": "logs",
+      "pages": [
+        "pages/logs"
+      ]
+    },{
+      "root": "index",
+      "name": "index",
+      "pages": [
+        "pages/index"
+      ]
+    }
+  ],
+    "plugins": {
+      "wxacommentplugin": {
+        "version": "latest",
+        "provider": "wx82e6ae1175f264fa"
+      }
+    
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "核辐射实时监测助手",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+    "tabBar": {
+      "custom": true,
+      "color": "#999999",
+      "selectedColor": "#000000",
+      "backgroundColor": "#ffffff",
+      "borderStyle": "black",
+      "list": [
+        {
+          "pagePath": "pages/monitoring/monitoring",
+          "text": "首页",
+          "icon": "home"
+        },
+        {
+          "pagePath": "pages/mine/mine",
+          "text": "我的",
+          "icon": "chat-o"
+        }
+      ]
+    }
+}

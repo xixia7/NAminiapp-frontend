@@ -1,0 +1,29 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+} 
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  font-size: 32rpx;
+}
+
+.view-container {
+  padding: 2rpx 16rpx;
+  padding-bottom: 60px;
+}
+sup{
+  font-size: 10px;
+  vertical-align:text-top;
+}
+sub{
+  font-size: 10px;
+  vertical-align:text-bottom;
+}

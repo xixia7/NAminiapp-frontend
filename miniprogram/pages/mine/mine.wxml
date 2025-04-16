@@ -1,0 +1,43 @@
+<!--pages/mine/mine.wxml-->
+<view>
+  <van-cell-group inset>
+    <van-cell title="	空气吸收剂量率" icon="flower-o" is-link data-id="1" bind:click="showPopup"/>	
+    <van-cell title="	生态环境部数据来源" icon="description" is-link data-id="2"  bind:click="showPopup"/>	
+    <!-- <van-cell title="	空气吸收剂量率本底水平" is-link data-id="3"  bind:click="showPopup"/>	 -->
+    <van-cell title="	核泄漏所致空气吸收剂量率" icon="discount" is-link data-id="4"  bind:click="showPopup"/>	
+    <van-cell title="	其他说明" icon="points" is-link data-id="5"  bind:click="showPopup"/>	
+    <van-cell title="	评价" icon="more-o" is-link data-id="5"  bind:click="goPingjia"/>	
+    <van-cell label="有问题请联系邮箱 xixia_7@foxmail.com" icon="comment-o" />	
+    
+  </van-cell-group>
+
+  <van-popup show="{{ showId == 1 }}" position="bottom" custom-class="pop-panel"
+    custom-style="height: 50%;" bind:close="onClose">
+    本系统发布的空气吸收剂量率为未扣除仪器对宇宙射线响应部分的环境地表γ辐射剂量率，单位为戈瑞•小时<sup>-1</sup>（Gy•h<sup>-1</sup>）。空气吸收剂量率是一种可直接、快速、连续反映环境辐射水平的测量量,是环境辐射监测的一个重要组成部分.由于它具有上述这些特出的优点,空气吸收剂量率监测对以下方面具有特殊的重要性：
+  A、获得有关环境天然本底γ辐射水平和人类实践活动所引起的环境γ辐射水平及其变化的资料；
+  B、监视核设施及其他辐射装置的源的状况，为释放量出现异常或事故情况发出报警；
+  C、为环境中的γ辐射对公众所致外照射剂量的估算提供数据。
+  </van-popup>
+
+  <van-popup show="{{ showId == 2 }}" position="bottom" custom-class="pop-panel"
+    custom-style="height: 50%;" bind:close="onClose">
+    主要来源于国家辐射环境监测网辐射环境自动监测站自动监测结果，监测点位包括环境质量监测点和核电厂监测点。
+环境质量监测点主要分布于全国各大中城市，自动站一般安置在城市中的公园、绿地、建筑物顶等相对固定点。
+核电厂监测点主要分布于核电厂厂界周围，自动站一般以反应堆为中心按不同距离和方位分成若干扇形进行布设。
+  </van-popup>
+
+  <van-popup show="{{ showId == 3 }}" position="bottom" custom-class="pop-panel"
+    custom-style="height: 50%;" bind:close="onClose">
+  </van-popup>
+
+  <van-popup show="{{ showId == 4 }}" position="bottom" custom-class="pop-panel"
+    custom-style="height: 50%;" bind:close="onClose">
+    核泄漏可以导致空气吸收剂量率大幅并持续升高，如日本福岛核事故导致其附近空气吸收剂量率长时间大幅度升高，截至2014年初，部分站点空气吸收剂量率仍达到上万nGy/h
+  </van-popup>
+
+  <van-popup show="{{ showId == 5 }}" position="bottom" custom-class="pop-panel"
+    custom-style="height: 50%;" bind:close="onClose">
+    日均值由每日内3/4以上的小时均值算术平均得出。日均值的统计时段为北京时间00:00至24:00。发布结果每日更新1次，为该站点的日均值。当遇到监测仪器校标、复位等日常维护行为，或出现仪器与通信故障、停电等现象，某些站点会出现一段时间内无监测值或监测值异常的情况。
+    根据《环境地表γ辐射剂量率测定规范》，空气吸收剂量率监测数据必须经过质量审核方可参与评价，为及时满足公众的环境知情权，系统发布的数据为辐射环境自动监测站的实时监测数据，未经审核。环境中γ辐射水平的评价请参考《全国空气吸收剂量率季度简报》。
+    </van-popup>
+</view>
